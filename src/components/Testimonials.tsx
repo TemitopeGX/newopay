@@ -51,15 +51,15 @@ const testimonials = [
 
 export function Testimonials() {
     return (
-        <section className="py-20 bg-white">
-            <div className="container mx-auto px-6">
+        <section className="py-12 sm:py-16 md:py-20 bg-white">
+            <div className="container mx-auto px-4 sm:px-6">
                 {/* Header */}
-                <div className="text-center mb-16 max-w-3xl mx-auto">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16 max-w-3xl mx-auto">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-bold text-black mb-4"
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 sm:mb-4"
                     >
                         What Our <span className="text-primary">Users Say</span>
                     </motion.h2>
@@ -68,14 +68,14 @@ export function Testimonials() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-lg text-gray-600"
+                        className="text-sm sm:text-base md:text-lg text-gray-600"
                     >
                         Join millions of satisfied users who trust OPay for their daily financial needs
                     </motion.p>
                 </div>
 
                 {/* Testimonials Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-7xl mx-auto">
                     {testimonials.map((testimonial, index) => (
                         <motion.div
                             key={index}
@@ -83,23 +83,23 @@ export function Testimonials() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                            className="bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
                         >
                             {/* Rating Stars */}
-                            <div className="flex gap-1 mb-4">
+                            <div className="flex gap-1 mb-3 sm:mb-4">
                                 {[...Array(testimonial.rating)].map((_, i) => (
-                                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-primary text-primary" />
                                 ))}
                             </div>
 
                             {/* Testimonial Text */}
-                            <p className="text-gray-700 mb-6 leading-relaxed">
+                            <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed">
                                 "{testimonial.text}"
                             </p>
 
                             {/* User Info */}
-                            <div className="flex items-center gap-3">
-                                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+                            <div className="flex items-center gap-2 sm:gap-3">
+                                <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-primary/20">
                                     <Image
                                         src={testimonial.avatar}
                                         alt={testimonial.name}
@@ -108,8 +108,8 @@ export function Testimonials() {
                                     />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-black">{testimonial.name}</h4>
-                                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                                    <h4 className="font-bold text-sm sm:text-base text-black">{testimonial.name}</h4>
+                                    <p className="text-xs sm:text-sm text-gray-500">{testimonial.role}</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -122,21 +122,21 @@ export function Testimonials() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.6 }}
-                    className="mt-16 flex flex-wrap justify-center gap-8 md:gap-16"
+                    className="mt-10 sm:mt-12 md:mt-16 flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16"
                 >
                     <div className="text-center">
-                        <p className="text-4xl md:text-5xl font-black text-black mb-2">35M+</p>
-                        <p className="text-gray-600 font-medium">Happy Users</p>
+                        <p className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-1 sm:mb-2">35M+</p>
+                        <p className="text-sm sm:text-base text-gray-600 font-medium">Happy Users</p>
                     </div>
-                    <div className="hidden md:block w-px h-16 bg-gray-200" />
+                    <div className="hidden sm:block w-px h-12 sm:h-14 md:h-16 bg-gray-200" />
                     <div className="text-center">
-                        <p className="text-4xl md:text-5xl font-black text-black mb-2">4.8/5</p>
-                        <p className="text-gray-600 font-medium">Average Rating</p>
+                        <p className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-1 sm:mb-2">4.8/5</p>
+                        <p className="text-sm sm:text-base text-gray-600 font-medium">Average Rating</p>
                     </div>
-                    <div className="hidden md:block w-px h-16 bg-gray-200" />
+                    <div className="hidden sm:block w-px h-12 sm:h-14 md:h-16 bg-gray-200" />
                     <div className="text-center">
-                        <p className="text-4xl md:text-5xl font-black text-black mb-2">1M+</p>
-                        <p className="text-gray-600 font-medium">5-Star Reviews</p>
+                        <p className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-1 sm:mb-2">1M+</p>
+                        <p className="text-sm sm:text-base text-gray-600 font-medium">5-Star Reviews</p>
                     </div>
                 </motion.div>
             </div>
